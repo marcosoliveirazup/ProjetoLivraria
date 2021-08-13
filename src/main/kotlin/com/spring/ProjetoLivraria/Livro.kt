@@ -1,7 +1,7 @@
 package com.spring.ProjetoLivraria
 
-import com.fasterxml.jackson.annotation.JsonFormat
-import java.time.LocalDate
+import org.hibernate.annotations.Fetch
+import org.hibernate.annotations.FetchMode
 import javax.persistence.*
 
 @Entity
@@ -18,11 +18,21 @@ class Livro(
     @Column(name = "descricao", nullable = false)
     open var descricao: String? = null,
     @Column(name = "dataDePublicacao", nullable = false)
-    open var dataDePublicacao: LocalDate? = null
+    open var dataDePublicacao: String? = null
 ) {
 
-
-
-
+//    @ManyToOne
+//    @JoinColumn(name = "author_id", nullable = false)
+//    var name: Autor? = null
+//
+//    @Fetch(FetchMode.SELECT)
+//    @ManyToMany(fetch = FetchType.EAGER)
+//    @JoinTable(
+//        name = "AUTOR_LIVRO",
+//        joinColumns = [JoinColumn(name = "fk_livro")],
+//        inverseJoinColumns = [JoinColumn(name = "fk_autor")]
+//    )
+//
+//    var autor: List<Autor>? = null
 
 }

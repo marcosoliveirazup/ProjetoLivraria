@@ -1,19 +1,22 @@
 package com.spring.ProjetoLivraria
 
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name = "TB_AUTOR")
-class Autor(
+open class Autor(
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     open var id: Int? = null,
     @Column(name = "nome", nullable = false)
-    open var nome: String
+    open var nome: String? = null,
+
+//    @ManyToMany(mappedBy = "autor", fetch = FetchType.EAGER)
+//    var livro: List<Livro>? = null
 ) {
+
+
 
 
 }

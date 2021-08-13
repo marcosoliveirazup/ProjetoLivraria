@@ -1,14 +1,12 @@
 package com.spring.ProjetoLivraria
 
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name = "TB_EDITORA")
-class Editora(
+open class Editora(
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     open var id: Int?= null,
     @Column(name = "name", nullable = false)
